@@ -27,4 +27,4 @@ def chatAcademiaBot():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="172.20.10.5", port=19006)

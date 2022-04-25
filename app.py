@@ -1,5 +1,5 @@
 from flask import Flask, request
-from chatbot import academiaChat, buildingChat
+from chatbot import academiaChat, buildingChat, financeChat
 
 app = Flask(__name__)
 
@@ -22,6 +22,15 @@ def chatAcademiaBot():
     option = request.json["choice"]
     print(option)
     response= academiaChat(option)
+    print(response)
+    return {"answer": response}
+
+# finance
+@app.route('/api/finance', methods=["POST", "GET"])
+def chatFinanceBot():
+    option = request.json["choice"]
+    print(option)
+    response= financeChat(option)
     print(response)
     return {"answer": response}
 
